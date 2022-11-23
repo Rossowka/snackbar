@@ -11,13 +11,13 @@ function App() {
   };
 
   return (
-    <div>
+    <div className='app'>
       <Button onClick={handleClick}>OPEN SIMPLE SNACKBAR</Button>
       { isActive && (
         <Snackbar
           autoHideDuration={5000}
           message='I love snacks'
-          position='topCentre'
+          position='bottom-right'
         />
       )}
     </div>

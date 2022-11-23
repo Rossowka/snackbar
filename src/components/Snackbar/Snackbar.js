@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles.scss';
 
-function Snackbar({ message }) {
+function Snackbar({ message, position }) {
 
-
+    console.log(position);
     return (
-        <div>
+        <div className={`snackbar ${position === 'topCenter' ? 'top-center' : 'bottom-right'}`}>
             <h5>{message}</h5>
         </div>
     )

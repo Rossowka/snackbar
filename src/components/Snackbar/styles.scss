@@ -1,2 +1,24 @@
 @import '../../assets/colors';
 
+.snackbar {
+    position: fixed;
+    background: $positive-color;
+    border-radius: 15px;
+    width: auto;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    h5 {
+        margin: 15px;
+    }
+
+    &.top-center {
+        top: 5%;
+    }
+
+    &.bottom-right {
+        top: 90%;
+        left: 5%;
+    }
+}
