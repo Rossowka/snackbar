@@ -1,10 +1,13 @@
 import React from 'react';
+import './styles.scss';
 
-function Snackbar() {
+function Snackbar({ message }) {
+
+
     return (
-        <>
-            
-        </>
+        <div>
+            <h5>{message}</h5>
+        </div>
     )
 }
 

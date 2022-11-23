@@ -4,16 +4,22 @@ import { Button } from './components/Button'
 import { Snackbar } from './components/Snackbar'
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  const handleClick = (e) => {
-    setIsOpen(e => !e);
+  const handleClick = () => {
+    setIsActive(!isActive);
   };
 
   return (
     <div>
       <Button onClick={handleClick}>OPEN SIMPLE SNACKBAR</Button>
-      { isOpen ? <Snackbar/> : false }
+      { isActive && (
+        <Snackbar
+          autoHideDuration={5000}
+          message='I love snacks'
+          position='topCentre'
+        />
+      )}
     </div>
   );
 }
