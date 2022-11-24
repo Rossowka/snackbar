@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Slidein from './Slidein';
 import './styles.scss';
 
-function Snackbar({ message, position }) {
+function Snackbar({ message, position, autoHideDuration, setIsActive }) {
 
-    console.log(position);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsActive(false);
+        }, autoHideDuration);
+
+        return () => clearTimeout(timer);
+    }, [setIsActive, autoHideDuration])
+
     return (
-        <div className={`snackbar ${position === 'topCenter' ? 'top-center' : 'bottom-right'}`}>
-            <h5>{message}</h5>
-        </div>
+        <Slidein position={ position }>
+            <div className={`snackbar ${position}`} style={{animationDuration: `${autoHideDuration/2}ms`}}>
+                <h5>{ message }</h5>
+            </div>
+        </Slidein>
     )
 }
 

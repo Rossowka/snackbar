@@ -1,7 +1,36 @@
 @import '../../assets/colors';
 
+.animation {
+    position: absolute;
+    width: 100vh;
+    height: 100vw;
+
+    .bottom-center, .bottom-left, .bottom-right {
+        animation: slideUp forwards;
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+        bottom: -10%;
+
+        @keyframes slideUp {
+            100% { bottom: 5%; }
+          }
+    }
+
+    .top-center, .top-left, .top-right {
+        animation: slideDown forwards;
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+        top: -10%;
+
+        @keyframes slideDown {
+            100% { top: 5%; }
+          }
+    }
+}
+
 .snackbar {
     position: fixed;
+
     background: $positive-color;
     border-radius: 15px;
     width: auto;
@@ -13,12 +42,11 @@
         margin: 15px;
     }
 
-    &.top-center {
-        top: 5%;
+    &.top-left, &.bottom-left {
+        left: 5%;
     }
 
-    &.bottom-right {
-        top: 90%;
-        left: 5%;
+    &.top-right, &.bottom-right {
+        right: 5%;
     }
 }
