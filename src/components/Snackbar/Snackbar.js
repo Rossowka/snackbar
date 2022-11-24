@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import Slidein from './Slidein';
+import Alert from './Alert';
 import './styles.scss';
 
-function Snackbar({ message, position, autoHideDuration, setIsActive }) {
+function Snackbar({ message, position, autoHideDuration, setIsActive, severity }) {
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -13,10 +14,15 @@ function Snackbar({ message, position, autoHideDuration, setIsActive }) {
     }, [setIsActive, autoHideDuration])
 
     return (
-        <Slidein position={ position }>
-            <div className={`snackbar ${position}`} style={{animationDuration: `${autoHideDuration/2}ms`}}>
-                <h5>{ message }</h5>
-            </div>
+        <Slidein
+            position={position}
+            autoHideDuration={autoHideDuration}
+            severity={severity}
+            >
+            <Alert
+                style={{animationDuration: `${autoHideDuration/2}ms`}}
+                message={message}
+            />
         </Slidein>
     )
 }

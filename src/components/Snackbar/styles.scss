@@ -30,8 +30,8 @@
 
 .snackbar {
     position: fixed;
-
-    background: $positive-color;
+    color: white;
+    background: $grey-color;
     border-radius: 15px;
     width: auto;
     height: auto;
@@ -48,5 +48,18 @@
 
     &.top-right, &.bottom-right {
         right: 5%;
+    }
+
+    &.error {
+        background-color: $error-color;
+    }
+    &.warning {
+        background-color: $warning-color;
+    }
+    &.info {
+        background-color: $info-color;
+    }
+    &.success {
+        background-color: $success-color;
     }
 }

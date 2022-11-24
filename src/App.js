@@ -19,6 +19,7 @@ function App() {
           autoHideDuration={5000}
           message='I love snacks'
           position='bottom-left'
+          severity='success'
         />
       )}
     </div>
